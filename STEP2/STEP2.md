@@ -1,15 +1,26 @@
-# STEP2
+# STEP2：构建 baseline 主结果表
 
-根据step1的结果，选取baselines和benchmarks，构建baseline主表格；需要满足下面约束：
+目标：基于 Step1 调研结果，确定 benchmarks 与 baselines，并产出可直接用于论文的 LaTeX 主表。
 
-1. benchmarks应不少于5个，且需为2024年6月1日后提出的benchmark，越新越好（硬性要求）
+## 必须项（MUST）
 
-2. baselines应不少于6个，来源于step1的调研结果，确保在5个benchmarks上都有已报告的结果，不需要我们进行复现才能得到相应结果（硬性要求）
+1. benchmarks 不少于 **5 个**，且需为 **2024-06-01** 之后提出（越新越优先）。
+2. baselines 不少于 **6 个**，且均来源于 Step1 调研结果。
+3. 所选 baselines 必须在上述 5 个 benchmarks 上已有公开结果（无需额外复现即可填表）。
+4. 需访问 Hugging Face 趋势页确认主流基座模型：
+   - `https://huggingface.co/models?pipeline_tag=text-generation&sort=trending`
+5. 基座模型选择应满足在 **H200 × 2** 资源约束下可训练（需说明关键训练假设，如精度/批大小/序列长度）。
+6. 输出 `STEP2/main_result_baseline.tex`，可直接用于论文展示。
 
-3. baseline的基模不能太旧，你应该访问 “https://huggingface.co/models?pipeline_tag=text-generation&sort=trending” 以确认当前流行的基模，且基模可以在 H200 * 2 服务器上训练（硬性要求）
+## 建议项（SHOULD）
 
-4. 应该形成一个能直接用于论文的LaTeX表格，保存在STEP2目录下，命名为main_result_baseline.tex，该表格应该全面，美观，这个表格将作为我们论文的主要结果与baselines对比展示（硬性要求）
+- 表格建议至少包含：模型、基座模型、benchmark、核心指标、训练预算、是否公开结果来源、引用。
+- 指标命名与单位保持统一；必要时附注统计方式（如 mean±std）。
 
-# 注意事项
+## 交付物（DELIVERABLES）
 
-你不能对本文件进行任何修改，你只能对本文件进行阅读
+- `STEP2/main_result_baseline.tex`
+
+## 注意事项
+
+你不能对本文件进行任何修改，你只能对本文件进行阅读。
